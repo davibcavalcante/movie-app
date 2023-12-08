@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #050515;
+}
+
+header {
+    color: #FFF;
+    background-image: linear-gradient(to bottom, #105080, #050515);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-header {
+    width: 300px;
+    margin: auto;
+    padding: 40px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.container-header > h1 {
+    font-size: 2em;
+    padding-bottom: 15px;
+}
+
+form {
+    position: relative;
+    width: 85%;
+}
+
+form > input {
+    color: #FFF;
+    background-color: transparent;
+    font-size: 1.2em;
+    width: 70%;
+    height: 36px;
+    border: none;
+    outline: none;
+}
+
+form > input::placeholder {
+    color: #646464;
+}
+
+form > span {
+    width: 0;
+    height: 2px;
+    background-color: #FFF;
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    transition: .5s;
+}
+
+form > input:focus ~ span {
+    width: 70%;
+}
+
+form > button {
+    color: white;
+    background-color: transparent;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 2px solid #FFF;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: .5s;
+
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+form > button:hover {
+    background-color: #000;
+    transform: scale(1.1);
+}
+
+main {
+    color: white;
+}
+
+.cards-container {
+    margin: 40px 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    position: relative;
+    overflow: hidden;
+}
+
+.card > img {
+    width: 100%;
+}
+
+.info {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    transform: translateY(calc(100% - 70px));
+    transition: 1s;
+}
+
+.info:hover {
+   transform: translateY(0);
+}
+
+.visible-info {
+    background-image: linear-gradient(to bottom, transparent, #050515);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.title-date > h1 {
+    font-size: 1.3em;
+}
+
+.title-date h2 {
+    color: #2c6b9b;
+    font-size: 1em;
+}
+
+.invisible-info {
+    background-color: #050515;
+    transition: 1s;
+}
+
+.invisible-info > p {
+    text-align: justify;
+    font-size: .9em;
+    padding: 10px;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.page-screen {
+    color: #FFF;
+    letter-spacing: 0.1em;
+    text-align: center;
+    padding: 5px;
+    width: 120px;
+    border: 2px solid #FFF;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+.container-buttons {
+    padding-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-buttons button {
+    color: #FFF;
+    background-color: #050515;
+    font-weight: bold;
+    margin: 0 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.container-buttons button:hover {
+    color: #050515;
+    background-color: #1670b4;
+    transform: scale(1.1);
+}
+
+#next-page-btn, #prev-page-btn {
+    width: 70px;
+    border-radius: 20px;
+}
+
+@media screen and (min-width: 600px) and (max-width: 799px) {
+    .container-header {
+        width: 90%;
+        justify-content: space-between;
+    }
+
+    .container-header > h1 {
+        font-size: 1.5em;
+    }
+
+    form {
+        width: 200px;
+    }
+
+    form > input {
+        width: 150px
+    }
+
+    form > input:focus ~ span {
+        width: 150px;
+    }
+}
+
+@media screen and (min-width: 800px) and (max-width: 1199px) {
+    .container-header {
+        width: 80%;
+        justify-content: space-between;
+    }
+
+    form {
+        width: 300px;
+    }
+
+    form > input {
+        width: 250px
+    }
+
+    form > input:focus ~ span {
+        width: 250px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .container-header {
+        width: 70%;
+        justify-content: space-between;
+    }
+
+    form {
+        width: 300px;
+    }
+
+    form > input {
+        width: 250px
+    }
+
+    form > input:focus ~ span {
+        width: 250px;
+    }
+}
