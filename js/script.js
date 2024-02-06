@@ -111,4 +111,4 @@ pageButtons.forEach((btn) => {
 })
 
 updatePageScreen()
-requestApi(apiKey)
+requestApi(apiKey, page)
