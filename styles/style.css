@@ -9,83 +9,95 @@
 
 body {
     background-color: #050515;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 header {
-    color: #FFF;
-    background-image: linear-gradient(to bottom, #105080, #050515);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    color: #F0F0F0;
+    background-image: linear-gradient(to bottom, #150259, #050515);
 }
 
-.container-header {
-    width: 300px;
-    margin: auto;
-    padding: 40px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.container-header > h1 {
+header h1 {
     font-size: 2em;
-    padding-bottom: 15px;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 15px 5px;
+}
+
+.form-container {
+    width: 100%;
+    padding: 15px;
 }
 
 form {
-    position: relative;
-    width: 85%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 15px;
 }
 
-form > input {
-    color: #FFF;
-    background-color: transparent;
+.search-container, .filter-container {
+    width: 100%;
+}
+
+label {
     font-size: 1.2em;
-    width: 70%;
-    height: 36px;
-    border: none;
+    display: block;
+}
+
+.input-button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-container input {
+    color: white;
+    background-color: transparent;
+    font-size: 1em;
+    flex: 1;
+    padding: 5px 10px;
+    border: 2px solid white;
+    border-radius: 15px;
     outline: none;
 }
 
-form > input::placeholder {
-    color: #646464;
+.search-container input::placeholder {
+    color: #c1c1c1;
 }
 
-form > span {
-    width: 0;
-    height: 2px;
-    background-color: #FFF;
-    position: absolute;
-    bottom: 5px;
-    left: 0;
-    transition: .5s;
-}
-
-form > input:focus ~ span {
-    width: 70%;
-}
-
-form > button {
+.search-container button {
     color: white;
     background-color: transparent;
     width: 35px;
     height: 35px;
     border-radius: 50%;
     border: 2px solid #FFF;
-    margin-left: 10px;
     cursor: pointer;
     transition: .5s;
-
-    position: absolute;
-    right: 0;
-    top: 0;
 }
 
-form > button:hover {
-    background-color: #000;
-    transform: scale(1.1);
+.filter-container select {
+    color: white;
+    background-color: transparent;
+    font-size: 1em;
+    border: 2px solid white;
+    border-radius: 10px;
+    outline: none;
+    padding: 3px 10px;
+    width: 100%;
+}
+
+.filter-container option {
+    color: black;
+}
+
+main {
+    flex: 1;
 }
 
 .cards-container {
@@ -140,12 +152,12 @@ form > button:hover {
 }
 
 .invisible-info > p {
-    text-align: justify;
+    hyphens: auto;
     font-size: .9em;
     padding: 10px;
 }
 
-footer {
+.pages-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -164,6 +176,7 @@ footer {
 }
 
 .container-buttons {
+    max-width: 100%;
     padding-bottom: 50px;
     display: flex;
     justify-content: center;
@@ -194,75 +207,57 @@ footer {
     border-radius: 20px;
 }
 
-@media screen and (min-width: 600px) and (max-width: 799px) {
-    .container-header {
-        width: 90%;
-        justify-content: space-between;
-    }
+footer {
+    color: white;
+    background-color:  black;
+    padding: 5px 0;
+}
 
-    .container-header > h1 {
-        font-size: 1.5em;
-    }
+footer p {
+    text-align: center;
+}
 
+footer a {
+    color: white;
+    font-weight: bold;
+    transition: .3s;
+}
+
+@media screen and (min-width: 600px) {
     form {
-        width: 200px;
+        flex-direction: row;
     }
 
-    form > input {
-        width: 150px
+    .search-container, .filter-container {
+        width: 48%;
     }
 
-    form > input:focus ~ span {
-        width: 150px;
-    }
-
-    .cards-container {
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    .div {
+        width: 1px;
+        height: 70px;
+        background-color: white;
     }
 }
 
-@media screen and (min-width: 800px) and (max-width: 1199px) {
-    .container-header {
-        width: 80%;
-        justify-content: space-between;
+@media screen and (min-width: 992px) {
+    header h1 {
+        font-size: 4em;
+    }
+
+    .search-container button:hover {
+        background-color: #000;
+        transform: scale(1.1);
     }
 
     form {
-        width: 300px;
+        justify-content: center;
     }
 
-    form > input {
-        width: 250px
+    .search-container, .filter-container {
+        max-width: 500px;
     }
 
-    form > input:focus ~ span {
-        width: 250px;
-    }
-
-    .cards-container {
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    }
-}
-
-@media screen and (min-width: 1200px) {
-    .container-header {
-        width: 70%;
-        justify-content: space-between;
-    }
-
-    form {
-        width: 300px;
-    }
-
-    form > input {
-        width: 250px
-    }
-
-    form > input:focus ~ span {
-        width: 250px;
-    }
-
-    .cards-container {
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    footer a:hover {
+        color: #1670b4;
     }
 }
