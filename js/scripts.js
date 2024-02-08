@@ -1,5 +1,3 @@
-import apiKey from "./api-key.js"
-
 const selectBy = () => {
     const filterSelect = document.querySelector('#filter-select')
     return filterSelect.value
@@ -74,7 +72,7 @@ const getMovie = async () => {
     const filter = selectBy()
     const search = searchBy()
     const page = getPage()
-    const key = apiKey
+    const key = '2b21d003774586cf790725e8c1ef411d'
 
     if (search) {
         try {
