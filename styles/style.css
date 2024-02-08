@@ -49,6 +49,7 @@ label {
 }
 
 .input-button-container {
+    max-width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
