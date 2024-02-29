@@ -49,7 +49,6 @@ label {
 }
 
 .input-button-container {
-    max-width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -60,10 +59,10 @@ label {
     color: white;
     background-color: transparent;
     font-size: 1em;
-    flex: 1;
     padding: 5px 10px;
+    width: calc(100% - 50px);
     border: 2px solid white;
-    border-radius: 15px;
+    border-radius: 8px;
     outline: none;
 }
 
@@ -74,8 +73,8 @@ label {
 .search-container button {
     color: white;
     background-color: transparent;
-    width: 35px;
-    height: 35px;
+    width: 39px;
+    height: 39px;
     border-radius: 50%;
     border: 2px solid #FFF;
     cursor: pointer;
@@ -87,7 +86,7 @@ label {
     background-color: transparent;
     font-size: 1em;
     border: 2px solid white;
-    border-radius: 10px;
+    border-radius: 8px;
     outline: none;
     padding: 3px 10px;
     width: 100%;
@@ -105,7 +104,7 @@ main {
     color: white;
     margin: 40px 20px;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 20px;
 }
 
